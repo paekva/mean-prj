@@ -8,18 +8,17 @@ var db = mongojs(db_url, ['users']);
 
 //Connecting urls to our response
 router.get('/', function (req, res) {  
-    res.send('Hello hole World!');
+    res.render('index', { title: 'Hey world', message: 'Hello, it\'s pug there!'});
   });
 
 router.get('/ktu', function (req, res) {
-  db.on('error', function(err) {
-    console.log('we had an error. '+err);
-  });
 
   db.users.findOne(function(err, user) {
-    if( err || !user) res.send('NO user was found');
-    else res.send('user is found');
+    if( err) res.send(err);
+    else if(!user) req.send('no user was found');
+    else res.send(user);
   });
+
   });
 
 module.exports = router;

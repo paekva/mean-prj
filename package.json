@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/paekva/mean-prj#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "mongojs": "^2.6.0",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "pug": "^2.0.3"
   }
 }
