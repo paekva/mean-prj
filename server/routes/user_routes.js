@@ -6,15 +6,28 @@ const mongoose = require('mongoose');
 const db_url = 'mongodb://kate:rfnz98grf@ds159782.mlab.com:59782/itmo_info'; 
 
 //Adding our db schema
-const User = require('./db/user');
+const User = require('../db/user');
 
 //Connecting urls to our response
-router.get('/', function (req, res) {  
-    res.render('index', { title: 'Hey world', message: 'Hello, it\'s pug there!'});
+router.get('/get', function(req,res) {
+
+  mongoose.connect(db_url, function (err) {
+ 
+    if (err) throw err;
+    console.log('Successfully connected');
+
+    User.find({
+      login: 'sasha'
+  }).exec(function(err, user) {
+      if (err) throw err;
+       
+      console.log(user);
   });
+  });
+});
 
 
-router.get('/user/save', function (req, res) {
+router.post('/user/save', function (req, res) {
 
   mongoose.connect(db_url, function (err) {
  

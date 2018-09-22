@@ -1,7 +1,8 @@
 const express = require('express');
-const routs = require('./server/routes');
+const routs = require('./server/routes/routes');
 const bodyParser = require("body-parser");
 const path = require('path');
+const user_router = require('./server/routes/user_routes');
 
 //Creating simple server
 const app = express();
@@ -9,6 +10,7 @@ const port = 4200;
 
 //Routes
 app.use('/', routs);
+app.use('/user', user_router);
 
 //View Engine
 app.set('views', path.join(__dirname, 'views')); // Folder with views

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
  
+// Schema of user collection in data base
 const userSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     login: {
