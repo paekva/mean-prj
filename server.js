@@ -17,7 +17,7 @@ app.set('views', path.join(__dirname, 'views')); // Folder with views
 app.set('view engine', 'pug'); //Specify engine
 
 // Set Static Folder
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
 // Body Parser MW
 app.use(bodyParser.json());
