@@ -1,5 +1,5 @@
 #Config
-db.js
+/server/routes/config/db.js
 
 # Logs
 logs
