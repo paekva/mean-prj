@@ -3,7 +3,7 @@ const router = express.Router();
 
 //Connection options for Data base
 const mongoose = require('mongoose');
-const db_url = require('./config/db');
+//const db_url = require('./config/db');
 
 //Adding our db schema
 const User = require('../db/user');

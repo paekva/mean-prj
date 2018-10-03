@@ -4,7 +4,7 @@ const path = require('path');
 
 //Connection options for Data base
 const mongoose = require('mongoose');
-const db_url = require('./config/db');
+//const db_url = require('./config/db');
 
 //Connecting urls to our response
 router.get('/', function (req, res) {  
